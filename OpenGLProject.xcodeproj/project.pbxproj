@@ -3,11 +3,18 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 55;
+	objectVersion = 53;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		A401A5D228431AF0008AE223 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A401A5D128431AF0008AE223 /* main.cpp */; };
+		A401A5DC28431B75008AE223 /* glad.c in Sources */ = {isa = PBXBuildFile; fileRef = A401A5DB28431B75008AE223 /* glad.c */; };
+		A401A60228432676008AE223 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A401A60128432676008AE223 /* AppKit.framework */; };
+		A401A60428432680008AE223 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A401A60328432680008AE223 /* IOKit.framework */; };
+		A401A6062843268C008AE223 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A401A6052843268C008AE223 /* CoreFoundation.framework */; };
+		A401A60828432697008AE223 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A401A60728432697008AE223 /* Foundation.framework */; };
+		A401A60A284326A2008AE223 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A401A609284326A2008AE223 /* CoreGraphics.framework */; };
+		A4107E642843296400A32716 /* libglfw3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A4107E632843296400A32716 /* libglfw3.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -20,11 +27,31 @@
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
+		A401A5E128431CA1008AE223 /* Embed Libraries */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Libraries";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		A401A5CE28431AF0008AE223 /* OpenGLProject */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = OpenGLProject; sourceTree = BUILT_PRODUCTS_DIR; };
 		A401A5D128431AF0008AE223 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		A401A5D928431B48008AE223 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		A401A5DB28431B75008AE223 /* glad.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = glad.c; sourceTree = "<group>"; };
+		A401A5DD28431C87008AE223 /* Libararies */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Libararies; sourceTree = SOURCE_ROOT; };
+		A401A5DE28431CA0008AE223 /* libglfw.3.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libglfw.3.3.dylib; path = Libararies/Lib/libglfw.3.3.dylib; sourceTree = "<group>"; };
+		A401A60128432676008AE223 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		A401A60328432680008AE223 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
+		A401A6052843268C008AE223 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		A401A60728432697008AE223 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		A401A609284326A2008AE223 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		A4107E632843296400A32716 /* libglfw3.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libglfw3.a; path = Libararies/Lib/libglfw3.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +59,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4107E642843296400A32716 /* libglfw3.a in Frameworks */,
+				A401A60A284326A2008AE223 /* CoreGraphics.framework in Frameworks */,
+				A401A60828432697008AE223 /* Foundation.framework in Frameworks */,
+				A401A6062843268C008AE223 /* CoreFoundation.framework in Frameworks */,
+				A401A60428432680008AE223 /* IOKit.framework in Frameworks */,
+				A401A60228432676008AE223 /* AppKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -43,6 +76,7 @@
 			children = (
 				A401A5D028431AF0008AE223 /* OpenGLProject */,
 				A401A5CF28431AF0008AE223 /* Products */,
+				A401A5D828431B48008AE223 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -57,9 +91,26 @@
 		A401A5D028431AF0008AE223 /* OpenGLProject */ = {
 			isa = PBXGroup;
 			children = (
+				A401A5DD28431C87008AE223 /* Libararies */,
+				A401A5DB28431B75008AE223 /* glad.c */,
 				A401A5D128431AF0008AE223 /* main.cpp */,
 			);
 			path = OpenGLProject;
+			sourceTree = "<group>";
+		};
+		A401A5D828431B48008AE223 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A4107E632843296400A32716 /* libglfw3.a */,
+				A401A609284326A2008AE223 /* CoreGraphics.framework */,
+				A401A60728432697008AE223 /* Foundation.framework */,
+				A401A6052843268C008AE223 /* CoreFoundation.framework */,
+				A401A60328432680008AE223 /* IOKit.framework */,
+				A401A60128432676008AE223 /* AppKit.framework */,
+				A401A5DE28431CA0008AE223 /* libglfw.3.3.dylib */,
+				A401A5D928431B48008AE223 /* OpenGL.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -72,6 +123,7 @@
 				A401A5CA28431AF0008AE223 /* Sources */,
 				A401A5CB28431AF0008AE223 /* Frameworks */,
 				A401A5CC28431AF0008AE223 /* CopyFiles */,
+				A401A5E128431CA1008AE223 /* Embed Libraries */,
 			);
 			buildRules = (
 			);
@@ -97,7 +149,7 @@
 				};
 			};
 			buildConfigurationList = A401A5C928431AF0008AE223 /* Build configuration list for PBXProject "OpenGLProject" */;
-			compatibilityVersion = "Xcode 13.0";
+			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -120,6 +172,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A401A5D228431AF0008AE223 /* main.cpp in Sources */,
+				A401A5DC28431B75008AE223 /* glad.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -241,6 +294,8 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5DA8VT6J9F;
 				ENABLE_HARDENED_RUNTIME = YES;
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/Libararies/include";
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/Libararies/Lib";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -251,6 +306,8 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5DA8VT6J9F;
 				ENABLE_HARDENED_RUNTIME = YES;
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/Libararies/include";
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/Libararies/Lib";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
