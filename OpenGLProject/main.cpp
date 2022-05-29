@@ -23,10 +23,13 @@ int main( void )
     // Make the window's context current
     glfwMakeContextCurrent( window );
     
+    // Initialize GLEW
+    glewExperimental = GL_TRUE; glewInit();
+    
     /* Loop until the user closes the window */
     while ( !glfwWindowShouldClose( window ) )
     {
-        //glClear( GL_COLOR_BUFFER_BIT );
+        glClear( GL_COLOR_BUFFER_BIT );
         
         // Render OpenGL here
  
