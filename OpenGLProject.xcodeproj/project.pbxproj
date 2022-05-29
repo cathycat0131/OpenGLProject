@@ -8,13 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		A401A5D228431AF0008AE223 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A401A5D128431AF0008AE223 /* main.cpp */; };
-		A401A5DC28431B75008AE223 /* glad.c in Sources */ = {isa = PBXBuildFile; fileRef = A401A5DB28431B75008AE223 /* glad.c */; };
 		A401A60228432676008AE223 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A401A60128432676008AE223 /* AppKit.framework */; };
 		A401A60428432680008AE223 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A401A60328432680008AE223 /* IOKit.framework */; };
 		A401A6062843268C008AE223 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A401A6052843268C008AE223 /* CoreFoundation.framework */; };
 		A401A60828432697008AE223 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A401A60728432697008AE223 /* Foundation.framework */; };
 		A401A60A284326A2008AE223 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A401A609284326A2008AE223 /* CoreGraphics.framework */; };
 		A4107E642843296400A32716 /* libglfw3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A4107E632843296400A32716 /* libglfw3.a */; };
+		A4C25E83284415B700F7B8F3 /* libGLEW.2.1.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A4C25E82284415B700F7B8F3 /* libGLEW.2.1.0.dylib */; };
+		A4C25E84284415F700F7B8F3 /* libGLEW.2.1.0.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = A4C25E82284415B700F7B8F3 /* libGLEW.2.1.0.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		A4C25E862844196100F7B8F3 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A401A5D928431B48008AE223 /* OpenGL.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -33,6 +35,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				A4C25E84284415F700F7B8F3 /* libGLEW.2.1.0.dylib in Embed Libraries */,
 			);
 			name = "Embed Libraries";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -52,6 +55,10 @@
 		A401A60728432697008AE223 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A401A609284326A2008AE223 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		A4107E632843296400A32716 /* libglfw3.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libglfw3.a; path = Libararies/Lib/libglfw3.a; sourceTree = "<group>"; };
+		A4C25E7A2843FA3D00F7B8F3 /* OpenGL.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = OpenGL.cpp; sourceTree = "<group>"; };
+		A4C25E7B2843FA3D00F7B8F3 /* OpenGL.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = OpenGL.hpp; sourceTree = "<group>"; };
+		A4C25E7D28440C3800F7B8F3 /* libGLEW.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGLEW.a; path = Libararies/Lib/libGLEW.a; sourceTree = "<group>"; };
+		A4C25E82284415B700F7B8F3 /* libGLEW.2.1.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libGLEW.2.1.0.dylib; path = Libararies/Lib/libGLEW.2.1.0.dylib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +66,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4C25E862844196100F7B8F3 /* OpenGL.framework in Frameworks */,
+				A4C25E83284415B700F7B8F3 /* libGLEW.2.1.0.dylib in Frameworks */,
 				A4107E642843296400A32716 /* libglfw3.a in Frameworks */,
 				A401A60A284326A2008AE223 /* CoreGraphics.framework in Frameworks */,
 				A401A60828432697008AE223 /* Foundation.framework in Frameworks */,
@@ -94,6 +103,8 @@
 				A401A5DD28431C87008AE223 /* Libararies */,
 				A401A5DB28431B75008AE223 /* glad.c */,
 				A401A5D128431AF0008AE223 /* main.cpp */,
+				A4C25E7A2843FA3D00F7B8F3 /* OpenGL.cpp */,
+				A4C25E7B2843FA3D00F7B8F3 /* OpenGL.hpp */,
 			);
 			path = OpenGLProject;
 			sourceTree = "<group>";
@@ -101,6 +112,8 @@
 		A401A5D828431B48008AE223 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A4C25E82284415B700F7B8F3 /* libGLEW.2.1.0.dylib */,
+				A4C25E7D28440C3800F7B8F3 /* libGLEW.a */,
 				A4107E632843296400A32716 /* libglfw3.a */,
 				A401A609284326A2008AE223 /* CoreGraphics.framework */,
 				A401A60728432697008AE223 /* Foundation.framework */,
@@ -172,7 +185,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A401A5D228431AF0008AE223 /* main.cpp in Sources */,
-				A401A5DC28431B75008AE223 /* glad.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,8 +306,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5DA8VT6J9F;
 				ENABLE_HARDENED_RUNTIME = YES;
-				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/Libararies/include";
-				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/Libararies/Lib";
+				HEADER_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/Libararies/include",
+					/usr/local/include,
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/Libararies/Lib",
+					/usr/local/lib,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -306,8 +324,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5DA8VT6J9F;
 				ENABLE_HARDENED_RUNTIME = YES;
-				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/Libararies/include";
-				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/Libararies/Lib";
+				HEADER_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/Libararies/include",
+					/usr/local/include,
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/Libararies/Lib",
+					/usr/local/lib,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
