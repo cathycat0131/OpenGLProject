@@ -14,9 +14,9 @@
 		A401A60828432697008AE223 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A401A60728432697008AE223 /* Foundation.framework */; };
 		A401A60A284326A2008AE223 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A401A609284326A2008AE223 /* CoreGraphics.framework */; };
 		A4107E642843296400A32716 /* libglfw3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A4107E632843296400A32716 /* libglfw3.a */; };
+		A437533B28459DAD00935CA0 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A401A5D928431B48008AE223 /* OpenGL.framework */; };
 		A4C25E83284415B700F7B8F3 /* libGLEW.2.1.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A4C25E82284415B700F7B8F3 /* libGLEW.2.1.0.dylib */; };
 		A4C25E84284415F700F7B8F3 /* libGLEW.2.1.0.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = A4C25E82284415B700F7B8F3 /* libGLEW.2.1.0.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		A4C25E862844196100F7B8F3 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A401A5D928431B48008AE223 /* OpenGL.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -66,8 +66,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A4C25E862844196100F7B8F3 /* OpenGL.framework in Frameworks */,
 				A4C25E83284415B700F7B8F3 /* libGLEW.2.1.0.dylib in Frameworks */,
+				A437533B28459DAD00935CA0 /* OpenGL.framework in Frameworks */,
 				A4107E642843296400A32716 /* libglfw3.a in Frameworks */,
 				A401A60A284326A2008AE223 /* CoreGraphics.framework in Frameworks */,
 				A401A60828432697008AE223 /* Foundation.framework in Frameworks */,
