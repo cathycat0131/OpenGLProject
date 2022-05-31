@@ -1,13 +1,27 @@
 #include <stdio.h>
 #include <string.h>
+#include <cmath>
+
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
+#include <GLM/glm.hpp>
+#include <GLM/gtc/matrix_transform.hpp>
+#include <GLM/gtc/type_ptr.hpp>
+
 
 
 //Window dimensions
 const GLint WIDTH = 800, HEIGHT = 600;
 
-GLuint VBO,VAO, shader;
+GLuint VBO,VAO, shader, uniformModel;
+
+//glm::mat4 model(1.0f);
+//model = glm::mat(1.0f);
+
+bool direction = true;
+float triOffset = 0.0f;
+float triMaxoffset = 0.7f;
+float triIncrement = 0.0005f;
 
 //Vertex Shader
 static const char* vShader = "          \n\
@@ -15,9 +29,10 @@ static const char* vShader = "          \n\
                                         \n\
 layout (location = 0) in vec3 pos;      \n\
                                         \n\
+uniform mat4 model;                    \n\
 void main()                             \n\
 {                                       \n\
-    gl_Position = vec4(0.2 * pos.x, 0.2 * pos.y, pos.z, 1.0); \n\
+    gl_Position = model * vec4(0.4 * pos.x, 0.4 * pos.y, pos.z, 1.0); \n\
 }";
 
 static const char* fShader = "          \n\
@@ -108,6 +123,8 @@ void CompileShaders() {
         return;
     }
     
+    uniformModel = glGetUniformLocation(shader,"model");
+    
     
 }
 
@@ -168,6 +185,17 @@ int main( void )
     while ( !glfwWindowShouldClose( window ) )
     {
         glfwPollEvents();
+        
+        if (direction) {
+            triOffset += 3 * triIncrement;
+        } else {
+            triOffset -= 3 * triIncrement;
+        }
+        
+        if(abs(triOffset) >= triMaxoffset) {
+            direction = !direction;
+        }
+        
         glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
         glClear( GL_COLOR_BUFFER_BIT );
         
@@ -175,6 +203,12 @@ int main( void )
         
         glUseProgram(shader);
         
+        glm::mat4 model(1.0f);
+        model = glm::translate(model, glm::vec3(triOffset, triOffset, 0.0f));
+        
+        glUniform1f(uniformModel, triOffset);
+        
+        glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
         glBindVertexArray(VAO);
         glDrawArrays(GL_TRIANGLES, 0, 3);
         glBindVertexArray(0);
@@ -183,8 +217,6 @@ int main( void )
         
         // Swap front and back buffers
         glfwSwapBuffers( window );
-        
-        // Poll for and process events
         
     }
     
