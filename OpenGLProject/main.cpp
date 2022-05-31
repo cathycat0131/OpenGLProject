@@ -12,16 +12,20 @@
 
 //Window dimensions
 const GLint WIDTH = 800, HEIGHT = 600;
+const float toRadians = 3.14159265f / 180.0f;
 
 GLuint VBO,VAO, shader, uniformModel;
 
-//glm::mat4 model(1.0f);
-//model = glm::mat(1.0f);
-
 bool direction = true;
+bool sizeDirection = true;
 float triOffset = 0.0f;
 float triMaxoffset = 0.7f;
-float triIncrement = 0.0005f;
+float triIncrement = 0.005f;
+
+float maxSize = 0.8f;
+float minSize = 0.4f;
+float curAngle = 0.0f;
+float curSize = 0.4f;
 
 //Vertex Shader
 static const char* vShader = "          \n\
@@ -32,7 +36,7 @@ layout (location = 0) in vec3 pos;      \n\
 uniform mat4 model;                    \n\
 void main()                             \n\
 {                                       \n\
-    gl_Position = model * vec4(0.4 * pos.x, 0.4 * pos.y, pos.z, 1.0); \n\
+    gl_Position = model * vec4(pos, 1.0); \n\
 }";
 
 static const char* fShader = "          \n\
@@ -187,15 +191,29 @@ int main( void )
         glfwPollEvents();
         
         if (direction) {
-            triOffset += 3 * triIncrement;
+            triOffset += triIncrement;
         } else {
-            triOffset -= 3 * triIncrement;
+            triOffset -= triIncrement;
         }
         
         if(abs(triOffset) >= triMaxoffset) {
             direction = !direction;
         }
         
+        curAngle += 0.1f;
+        if(curAngle >= 360) {
+            curAngle -= 360;
+        }
+        
+        if(sizeDirection) {
+            curSize += 0.001f;
+        } else {
+            curSize -= 0.001f;
+        }
+        
+        if(curSize >= maxSize || curSize <= minSize) {
+            sizeDirection = !sizeDirection;
+        }
         glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
         glClear( GL_COLOR_BUFFER_BIT );
         
@@ -204,7 +222,9 @@ int main( void )
         glUseProgram(shader);
         
         glm::mat4 model(1.0f);
-        model = glm::translate(model, glm::vec3(triOffset, triOffset, 0.0f));
+        //model = glm::rotate(model, curAngle * toRadians, glm::vec3(0.0f, 0.0f, 1.0f));
+        model = glm::scale(model, glm::vec3(curSize,0.4f, 1.0f));
+        model = glm::translate(model, glm::vec3(triOffset, 0.0f, 0.0f));
         
         glUniform1f(uniformModel, triOffset);
         
