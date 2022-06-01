@@ -13,6 +13,9 @@
 		A401A6062843268C008AE223 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A401A6052843268C008AE223 /* CoreFoundation.framework */; };
 		A401A60828432697008AE223 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A401A60728432697008AE223 /* Foundation.framework */; };
 		A401A60A284326A2008AE223 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A401A609284326A2008AE223 /* CoreGraphics.framework */; };
+		A40893302846CDED00ADC0B8 /* Mesh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A408932E2846CDEC00ADC0B8 /* Mesh.cpp */; };
+		A40893372846DA0A00ADC0B8 /* Shader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A40893352846DA0A00ADC0B8 /* Shader.cpp */; };
+		A408933F2846E59300ADC0B8 /* GLWindow.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A408933D2846E59300ADC0B8 /* GLWindow.cpp */; };
 		A4107E642843296400A32716 /* libglfw3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A4107E632843296400A32716 /* libglfw3.a */; };
 		A437533B28459DAD00935CA0 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A401A5D928431B48008AE223 /* OpenGL.framework */; };
 		A4C25E83284415B700F7B8F3 /* libGLEW.2.1.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A4C25E82284415B700F7B8F3 /* libGLEW.2.1.0.dylib */; };
@@ -54,9 +57,14 @@
 		A401A6052843268C008AE223 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		A401A60728432697008AE223 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A401A609284326A2008AE223 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		A408932E2846CDEC00ADC0B8 /* Mesh.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Mesh.cpp; sourceTree = "<group>"; };
+		A408932F2846CDEC00ADC0B8 /* Mesh.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Mesh.hpp; sourceTree = "<group>"; };
+		A40893352846DA0A00ADC0B8 /* Shader.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Shader.cpp; sourceTree = "<group>"; };
+		A40893362846DA0A00ADC0B8 /* Shader.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Shader.hpp; sourceTree = "<group>"; };
+		A408933D2846E59300ADC0B8 /* GLWindow.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = GLWindow.cpp; sourceTree = "<group>"; };
+		A408933E2846E59300ADC0B8 /* GLWindow.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = GLWindow.hpp; sourceTree = "<group>"; };
+		A40893402846EE8B00ADC0B8 /* Shaders */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Shaders; sourceTree = "<group>"; };
 		A4107E632843296400A32716 /* libglfw3.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libglfw3.a; path = Libararies/Lib/libglfw3.a; sourceTree = "<group>"; };
-		A4C25E7A2843FA3D00F7B8F3 /* OpenGL.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = OpenGL.cpp; sourceTree = "<group>"; };
-		A4C25E7B2843FA3D00F7B8F3 /* OpenGL.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = OpenGL.hpp; sourceTree = "<group>"; };
 		A4C25E7D28440C3800F7B8F3 /* libGLEW.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGLEW.a; path = Libararies/Lib/libGLEW.a; sourceTree = "<group>"; };
 		A4C25E82284415B700F7B8F3 /* libGLEW.2.1.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libGLEW.2.1.0.dylib; path = Libararies/Lib/libGLEW.2.1.0.dylib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -100,11 +108,16 @@
 		A401A5D028431AF0008AE223 /* OpenGLProject */ = {
 			isa = PBXGroup;
 			children = (
+				A40893402846EE8B00ADC0B8 /* Shaders */,
 				A401A5DD28431C87008AE223 /* Libararies */,
 				A401A5DB28431B75008AE223 /* glad.c */,
 				A401A5D128431AF0008AE223 /* main.cpp */,
-				A4C25E7A2843FA3D00F7B8F3 /* OpenGL.cpp */,
-				A4C25E7B2843FA3D00F7B8F3 /* OpenGL.hpp */,
+				A408932E2846CDEC00ADC0B8 /* Mesh.cpp */,
+				A408932F2846CDEC00ADC0B8 /* Mesh.hpp */,
+				A40893352846DA0A00ADC0B8 /* Shader.cpp */,
+				A40893362846DA0A00ADC0B8 /* Shader.hpp */,
+				A408933D2846E59300ADC0B8 /* GLWindow.cpp */,
+				A408933E2846E59300ADC0B8 /* GLWindow.hpp */,
 			);
 			path = OpenGLProject;
 			sourceTree = "<group>";
@@ -184,6 +197,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A408933F2846E59300ADC0B8 /* GLWindow.cpp in Sources */,
+				A40893302846CDED00ADC0B8 /* Mesh.cpp in Sources */,
+				A40893372846DA0A00ADC0B8 /* Shader.cpp in Sources */,
 				A401A5D228431AF0008AE223 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
