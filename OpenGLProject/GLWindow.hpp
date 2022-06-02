@@ -39,4 +39,15 @@ private:
     GLint width, height;
     GLint bufferWidth, bufferHeight;
     
+    bool keys[1024];
+    
+    GLfloat lastX;
+    GLfloat lastY;
+    GLfloat xChange;
+    GLfloat yChange;
+    bool mousedFirstMoved;
+    
+    void createCallBacks();
+    static void handleKeys(GLFWwindow* window, int key, int code, int action, int mode);
+    static void handleMouse(GLFWwindow* window, double xPos, double yPos);
 };
