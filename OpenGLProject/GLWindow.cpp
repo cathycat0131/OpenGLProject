@@ -10,6 +10,8 @@
 GLWindow::GLWindow(){
     width = 800;
     height = 600;
+    xChange = 0.0f;
+    yChange = 0.0f;
     for (size_t i = 0; i < 1024; i++) {
         keys[i] = 0;
     }
@@ -18,7 +20,8 @@ GLWindow::GLWindow(){
 GLWindow::GLWindow(GLint windowWidth, GLint windowHeight) {
     width = windowWidth;
     height = windowHeight;
-    
+    xChange = 0.0f;
+    yChange = 0.0f;
     for (size_t i = 0; i < 1024; i++) {
         keys[i] = 0;
     }
@@ -59,6 +62,7 @@ int GLWindow::Initialize(){
     
     //Handle Keys + Mouse input
     createCallBacks();
+    //glfwSetInputMode(mainWindow, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
 
     // Allow modern extension features
     glewExperimental = GL_TRUE;
@@ -82,6 +86,18 @@ int GLWindow::Initialize(){
 void GLWindow::createCallBacks() {
     glfwSetKeyCallback(mainWindow, handleKeys);
     glfwSetCursorPosCallback(mainWindow, handleMouse);
+}
+
+GLfloat GLWindow::getXChange() {
+    GLfloat theChange = xChange;
+    xChange = 0.0f;
+    return theChange;
+}
+
+GLfloat GLWindow::getYChange() {
+    GLfloat theChange = yChange;
+    yChange = 0.0f;
+    return theChange;
 }
 
 void GLWindow::handleKeys(GLFWwindow* window, int key, int code, int action, int mode) {
@@ -114,8 +130,6 @@ void GLWindow::handleMouse(GLFWwindow* window, double xPos, double yPos){
     
     theWindow->lastX = xPos;
     theWindow->lastY = yPos;
-    
-    printf("X: %6f, y:%.6f\n", theWindow->xChange, theWindow->yChange);
 }
 
 GLWindow::~GLWindow(){

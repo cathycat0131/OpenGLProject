@@ -11,6 +11,7 @@ Shader::Shader() {
     shaderID = 0;
     uniformModel = 0;
     uniformProjection = 0;
+    uniformView = 0;
 }
 
 void Shader::CreateFromString(const char* vertexCode, const char* fragmentCode) {
@@ -75,6 +76,7 @@ void Shader::CompileShader(const char* vertexCode, const char* fragmentCode) {
     
     uniformProjection = glGetUniformLocation(shaderID,"projection");
     uniformModel = glGetUniformLocation(shaderID,"model");
+    uniformView = glGetUniformLocation(shaderID, "view");
 }
 
 GLuint Shader::GetProjectionLocation() {
@@ -83,6 +85,10 @@ GLuint Shader::GetProjectionLocation() {
 
 GLuint Shader::GetModelLocation() {
     return uniformModel;
+}
+
+GLuint Shader::GetViewLocation() {
+    return uniformView;
 }
 
 void Shader::UseShader() {
