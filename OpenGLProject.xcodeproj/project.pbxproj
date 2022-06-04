@@ -18,6 +18,7 @@
 		A408933F2846E59300ADC0B8 /* GLWindow.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A408933D2846E59300ADC0B8 /* GLWindow.cpp */; };
 		A4107E642843296400A32716 /* libglfw3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A4107E632843296400A32716 /* libglfw3.a */; };
 		A437533B28459DAD00935CA0 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A401A5D928431B48008AE223 /* OpenGL.framework */; };
+		A461B4F6284AD2E200A0482A /* Texture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A461B4F4284AD2E200A0482A /* Texture.cpp */; };
 		A46651292849320B00401FFB /* Camera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A46651272849320A00401FFB /* Camera.cpp */; };
 		A4C25E83284415B700F7B8F3 /* libGLEW.2.1.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A4C25E82284415B700F7B8F3 /* libGLEW.2.1.0.dylib */; };
 		A4C25E84284415F700F7B8F3 /* libGLEW.2.1.0.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = A4C25E82284415B700F7B8F3 /* libGLEW.2.1.0.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
@@ -66,6 +67,9 @@
 		A408933E2846E59300ADC0B8 /* GLWindow.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = GLWindow.hpp; sourceTree = "<group>"; };
 		A40893402846EE8B00ADC0B8 /* Shaders */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Shaders; sourceTree = "<group>"; };
 		A4107E632843296400A32716 /* libglfw3.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libglfw3.a; path = Libararies/Lib/libglfw3.a; sourceTree = "<group>"; };
+		A461B4F4284AD2E200A0482A /* Texture.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Texture.cpp; sourceTree = "<group>"; };
+		A461B4F5284AD2E200A0482A /* Texture.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Texture.hpp; sourceTree = "<group>"; };
+		A461B4F7284AD31800A0482A /* stb_image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stb_image.h; sourceTree = "<group>"; };
 		A46651272849320A00401FFB /* Camera.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Camera.cpp; sourceTree = "<group>"; };
 		A46651282849320A00401FFB /* Camera.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Camera.hpp; sourceTree = "<group>"; };
 		A4C25E7D28440C3800F7B8F3 /* libGLEW.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGLEW.a; path = Libararies/Lib/libGLEW.a; sourceTree = "<group>"; };
@@ -111,6 +115,7 @@
 		A401A5D028431AF0008AE223 /* OpenGLProject */ = {
 			isa = PBXGroup;
 			children = (
+				A461B4F7284AD31800A0482A /* stb_image.h */,
 				A40893402846EE8B00ADC0B8 /* Shaders */,
 				A401A5DD28431C87008AE223 /* Libararies */,
 				A401A5DB28431B75008AE223 /* glad.c */,
@@ -123,6 +128,8 @@
 				A408933E2846E59300ADC0B8 /* GLWindow.hpp */,
 				A46651272849320A00401FFB /* Camera.cpp */,
 				A46651282849320A00401FFB /* Camera.hpp */,
+				A461B4F4284AD2E200A0482A /* Texture.cpp */,
+				A461B4F5284AD2E200A0482A /* Texture.hpp */,
 			);
 			path = OpenGLProject;
 			sourceTree = "<group>";
@@ -205,6 +212,7 @@
 				A408933F2846E59300ADC0B8 /* GLWindow.cpp in Sources */,
 				A40893302846CDED00ADC0B8 /* Mesh.cpp in Sources */,
 				A46651292849320B00401FFB /* Camera.cpp in Sources */,
+				A461B4F6284AD2E200A0482A /* Texture.cpp in Sources */,
 				A40893372846DA0A00ADC0B8 /* Shader.cpp in Sources */,
 				A401A5D228431AF0008AE223 /* main.cpp in Sources */,
 			);
