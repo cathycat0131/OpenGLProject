@@ -70,6 +70,7 @@
 		A461B4F4284AD2E200A0482A /* Texture.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Texture.cpp; sourceTree = "<group>"; };
 		A461B4F5284AD2E200A0482A /* Texture.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Texture.hpp; sourceTree = "<group>"; };
 		A461B4F7284AD31800A0482A /* stb_image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stb_image.h; sourceTree = "<group>"; };
+		A461B4F8284AE28100A0482A /* Textures */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Textures; sourceTree = "<group>"; };
 		A46651272849320A00401FFB /* Camera.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Camera.cpp; sourceTree = "<group>"; };
 		A46651282849320A00401FFB /* Camera.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Camera.hpp; sourceTree = "<group>"; };
 		A4C25E7D28440C3800F7B8F3 /* libGLEW.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGLEW.a; path = Libararies/Lib/libGLEW.a; sourceTree = "<group>"; };
@@ -115,6 +116,7 @@
 		A401A5D028431AF0008AE223 /* OpenGLProject */ = {
 			isa = PBXGroup;
 			children = (
+				A461B4F8284AE28100A0482A /* Textures */,
 				A461B4F7284AD31800A0482A /* stb_image.h */,
 				A40893402846EE8B00ADC0B8 /* Shaders */,
 				A401A5DD28431C87008AE223 /* Libararies */,

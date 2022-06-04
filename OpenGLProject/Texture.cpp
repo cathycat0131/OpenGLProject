@@ -11,7 +11,7 @@ Texture::Texture(){
     textureID = 0;
     width = 0;
     height = 0;
-    fileLocation = "";
+    fileLocation = NULL;
     bitDepth = 0;
 }
 
@@ -24,7 +24,7 @@ Texture::Texture(char* fileLoc){
 }
 
 void Texture::LoadTexture(){
-    unsigned char *texData = stbi_load(fileLocation, &width, &height, &bitDepth, 0);
+    unsigned char *texData = stbi_load(fileLocation, &width, &height, &bitDepth,STBI_rgb_alpha);
     if(!texData){
         printf("Failed to find: %s\n", fileLocation);
         return;
@@ -33,16 +33,17 @@ void Texture::LoadTexture(){
     glGenTextures(1, &textureID);
     glBindTexture(GL_TEXTURE_2D, textureID);
     
-    glTextureParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
-    glTextureParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
-    glTextureParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-    glTextureParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
     
+    glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
     glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, texData);
     glGenerateMipmap(GL_TEXTURE_2D);
-    
+
     glBindTexture(GL_TEXTURE_2D, 0);
-    
+
     stbi_image_free(texData);
 }
 
