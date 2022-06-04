@@ -5,6 +5,7 @@ layout (location = 1) in vec2 tex;
 
 out vec4 vCol;
 out vec2 TexCoord;
+
                                                         
 uniform mat4 model;
 uniform mat4 projection;

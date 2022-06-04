@@ -19,6 +19,7 @@
 		A4107E642843296400A32716 /* libglfw3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A4107E632843296400A32716 /* libglfw3.a */; };
 		A437533B28459DAD00935CA0 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A401A5D928431B48008AE223 /* OpenGL.framework */; };
 		A461B4F6284AD2E200A0482A /* Texture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A461B4F4284AD2E200A0482A /* Texture.cpp */; };
+		A461B4FB284BD69C00A0482A /* Light.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A461B4F9284BD69C00A0482A /* Light.cpp */; };
 		A46651292849320B00401FFB /* Camera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A46651272849320A00401FFB /* Camera.cpp */; };
 		A4C25E83284415B700F7B8F3 /* libGLEW.2.1.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A4C25E82284415B700F7B8F3 /* libGLEW.2.1.0.dylib */; };
 		A4C25E84284415F700F7B8F3 /* libGLEW.2.1.0.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = A4C25E82284415B700F7B8F3 /* libGLEW.2.1.0.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
@@ -71,6 +72,8 @@
 		A461B4F5284AD2E200A0482A /* Texture.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Texture.hpp; sourceTree = "<group>"; };
 		A461B4F7284AD31800A0482A /* stb_image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stb_image.h; sourceTree = "<group>"; };
 		A461B4F8284AE28100A0482A /* Textures */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Textures; sourceTree = "<group>"; };
+		A461B4F9284BD69C00A0482A /* Light.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Light.cpp; sourceTree = "<group>"; };
+		A461B4FA284BD69C00A0482A /* Light.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Light.hpp; sourceTree = "<group>"; };
 		A46651272849320A00401FFB /* Camera.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Camera.cpp; sourceTree = "<group>"; };
 		A46651282849320A00401FFB /* Camera.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Camera.hpp; sourceTree = "<group>"; };
 		A4C25E7D28440C3800F7B8F3 /* libGLEW.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGLEW.a; path = Libararies/Lib/libGLEW.a; sourceTree = "<group>"; };
@@ -132,6 +135,8 @@
 				A46651282849320A00401FFB /* Camera.hpp */,
 				A461B4F4284AD2E200A0482A /* Texture.cpp */,
 				A461B4F5284AD2E200A0482A /* Texture.hpp */,
+				A461B4F9284BD69C00A0482A /* Light.cpp */,
+				A461B4FA284BD69C00A0482A /* Light.hpp */,
 			);
 			path = OpenGLProject;
 			sourceTree = "<group>";
@@ -211,6 +216,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A461B4FB284BD69C00A0482A /* Light.cpp in Sources */,
 				A408933F2846E59300ADC0B8 /* GLWindow.cpp in Sources */,
 				A40893302846CDED00ADC0B8 /* Mesh.cpp in Sources */,
 				A46651292849320B00401FFB /* Camera.cpp in Sources */,

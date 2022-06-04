@@ -5,6 +5,7 @@
 #include "GLWindow.hpp"
 #include "Camera.hpp"
 #include "Texture.hpp"
+#include "Light.hpp"
 
 #include <stdio.h>
 #include <string.h>
@@ -25,6 +26,7 @@ GLWindow mainWindow;
 std::vector<Mesh*> meshList;
 std::vector<Shader> shaderList;
 Camera camera;
+Light mainLight;
 
 Texture brickTexture;
 Texture buildingTexture;
@@ -98,7 +100,10 @@ int main( void )
     buildingTexture = Texture("Textures/building.jpg");
     buildingTexture.LoadTexture();
     
-    GLuint uniformProjection = 0, uniformModel = 0, uniformView = 0;
+    //Create light instance
+    mainLight = Light(0.0f, 1.0f, 1.0f, 0.5f);
+    
+    GLuint uniformProjection = 0, uniformModel = 0, uniformView = 0, uniformAmbientIntensity = 0, uniformAmbientColour = 0;
     glm::mat4 projection = glm::perspective(glm::radians(45.0f), (GLfloat)(mainWindow.getBufferWidth() / mainWindow.getBufferHeight()), 0.1f, 100.0f);
      
     /* Loop until the user closes the window */
@@ -144,14 +149,21 @@ int main( void )
         glClear( GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
         
         
-        // Render OpenGL here
+        // Get model uniform setting
         shaderList[0].UseShader();
         uniformModel = shaderList[0].GetModelLocation();
         uniformProjection = shaderList[0].GetProjectionLocation();
         uniformView = shaderList[0].GetViewLocation();
+        uniformAmbientColour = shaderList[0].GetAmbientColourLocation();
+        uniformAmbientIntensity = shaderList[0].GetAmbientIntensityLocation();
         
+        //Put light into action
+        mainLight.UseLight(uniformAmbientIntensity, uniformAmbientColour);
+        
+        //Create model
         glm::mat4 model(1.0f);
         
+        //Translate, scale, rotate
         model = glm::translate(model, glm::vec3(0.0f, 0.5f, -2.5f));
         model = glm::rotate(model, 0 * toRadians, glm::vec3(0.0f, 1.0f, 0.0f));
         model = glm::scale(model, glm::vec3(0.3f,0.3f, 0.3f));
