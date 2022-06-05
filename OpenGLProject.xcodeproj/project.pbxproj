@@ -21,6 +21,7 @@
 		A461B4F6284AD2E200A0482A /* Texture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A461B4F4284AD2E200A0482A /* Texture.cpp */; };
 		A461B4FB284BD69C00A0482A /* Light.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A461B4F9284BD69C00A0482A /* Light.cpp */; };
 		A46651292849320B00401FFB /* Camera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A46651272849320A00401FFB /* Camera.cpp */; };
+		A46ABD6C284D170B00C1695A /* Material.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A46ABD6A284D170B00C1695A /* Material.cpp */; };
 		A4C25E83284415B700F7B8F3 /* libGLEW.2.1.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A4C25E82284415B700F7B8F3 /* libGLEW.2.1.0.dylib */; };
 		A4C25E84284415F700F7B8F3 /* libGLEW.2.1.0.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = A4C25E82284415B700F7B8F3 /* libGLEW.2.1.0.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 /* End PBXBuildFile section */
@@ -76,6 +77,8 @@
 		A461B4FA284BD69C00A0482A /* Light.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Light.hpp; sourceTree = "<group>"; };
 		A46651272849320A00401FFB /* Camera.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Camera.cpp; sourceTree = "<group>"; };
 		A46651282849320A00401FFB /* Camera.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Camera.hpp; sourceTree = "<group>"; };
+		A46ABD6A284D170B00C1695A /* Material.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Material.cpp; sourceTree = "<group>"; };
+		A46ABD6B284D170B00C1695A /* Material.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Material.hpp; sourceTree = "<group>"; };
 		A4C25E7D28440C3800F7B8F3 /* libGLEW.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGLEW.a; path = Libararies/Lib/libGLEW.a; sourceTree = "<group>"; };
 		A4C25E82284415B700F7B8F3 /* libGLEW.2.1.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libGLEW.2.1.0.dylib; path = Libararies/Lib/libGLEW.2.1.0.dylib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -137,6 +140,8 @@
 				A461B4F5284AD2E200A0482A /* Texture.hpp */,
 				A461B4F9284BD69C00A0482A /* Light.cpp */,
 				A461B4FA284BD69C00A0482A /* Light.hpp */,
+				A46ABD6A284D170B00C1695A /* Material.cpp */,
+				A46ABD6B284D170B00C1695A /* Material.hpp */,
 			);
 			path = OpenGLProject;
 			sourceTree = "<group>";
@@ -220,6 +225,7 @@
 				A408933F2846E59300ADC0B8 /* GLWindow.cpp in Sources */,
 				A40893302846CDED00ADC0B8 /* Mesh.cpp in Sources */,
 				A46651292849320B00401FFB /* Camera.cpp in Sources */,
+				A46ABD6C284D170B00C1695A /* Material.cpp in Sources */,
 				A461B4F6284AD2E200A0482A /* Texture.cpp in Sources */,
 				A40893372846DA0A00ADC0B8 /* Shader.cpp in Sources */,
 				A401A5D228431AF0008AE223 /* main.cpp in Sources */,
