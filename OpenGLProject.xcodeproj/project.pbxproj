@@ -22,6 +22,8 @@
 		A461B4FB284BD69C00A0482A /* Light.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A461B4F9284BD69C00A0482A /* Light.cpp */; };
 		A46651292849320B00401FFB /* Camera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A46651272849320A00401FFB /* Camera.cpp */; };
 		A46ABD6C284D170B00C1695A /* Material.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A46ABD6A284D170B00C1695A /* Material.cpp */; };
+		A4990507284E62F200CB10D7 /* DirectionalLight.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A4990505284E62F200CB10D7 /* DirectionalLight.cpp */; };
+		A499050A284E665E00CB10D7 /* PointLight.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A4990508284E665E00CB10D7 /* PointLight.cpp */; };
 		A4C25E83284415B700F7B8F3 /* libGLEW.2.1.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A4C25E82284415B700F7B8F3 /* libGLEW.2.1.0.dylib */; };
 		A4C25E84284415F700F7B8F3 /* libGLEW.2.1.0.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = A4C25E82284415B700F7B8F3 /* libGLEW.2.1.0.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 /* End PBXBuildFile section */
@@ -79,6 +81,11 @@
 		A46651282849320A00401FFB /* Camera.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Camera.hpp; sourceTree = "<group>"; };
 		A46ABD6A284D170B00C1695A /* Material.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Material.cpp; sourceTree = "<group>"; };
 		A46ABD6B284D170B00C1695A /* Material.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Material.hpp; sourceTree = "<group>"; };
+		A4990505284E62F200CB10D7 /* DirectionalLight.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = DirectionalLight.cpp; sourceTree = "<group>"; };
+		A4990506284E62F200CB10D7 /* DirectionalLight.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = DirectionalLight.hpp; sourceTree = "<group>"; };
+		A4990508284E665E00CB10D7 /* PointLight.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = PointLight.cpp; sourceTree = "<group>"; };
+		A4990509284E665E00CB10D7 /* PointLight.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = PointLight.hpp; sourceTree = "<group>"; };
+		A499050B284E6F8400CB10D7 /* CommonValues.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonValues.h; sourceTree = "<group>"; };
 		A4C25E7D28440C3800F7B8F3 /* libGLEW.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGLEW.a; path = Libararies/Lib/libGLEW.a; sourceTree = "<group>"; };
 		A4C25E82284415B700F7B8F3 /* libGLEW.2.1.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libGLEW.2.1.0.dylib; path = Libararies/Lib/libGLEW.2.1.0.dylib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -142,6 +149,11 @@
 				A461B4FA284BD69C00A0482A /* Light.hpp */,
 				A46ABD6A284D170B00C1695A /* Material.cpp */,
 				A46ABD6B284D170B00C1695A /* Material.hpp */,
+				A4990505284E62F200CB10D7 /* DirectionalLight.cpp */,
+				A4990506284E62F200CB10D7 /* DirectionalLight.hpp */,
+				A4990508284E665E00CB10D7 /* PointLight.cpp */,
+				A4990509284E665E00CB10D7 /* PointLight.hpp */,
+				A499050B284E6F8400CB10D7 /* CommonValues.h */,
 			);
 			path = OpenGLProject;
 			sourceTree = "<group>";
@@ -222,7 +234,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				A461B4FB284BD69C00A0482A /* Light.cpp in Sources */,
+				A499050A284E665E00CB10D7 /* PointLight.cpp in Sources */,
 				A408933F2846E59300ADC0B8 /* GLWindow.cpp in Sources */,
+				A4990507284E62F200CB10D7 /* DirectionalLight.cpp in Sources */,
 				A40893302846CDED00ADC0B8 /* Mesh.cpp in Sources */,
 				A46651292849320B00401FFB /* Camera.cpp in Sources */,
 				A46ABD6C284D170B00C1695A /* Material.cpp in Sources */,
