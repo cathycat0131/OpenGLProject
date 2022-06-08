@@ -18,6 +18,7 @@
 		A408933F2846E59300ADC0B8 /* GLWindow.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A408933D2846E59300ADC0B8 /* GLWindow.cpp */; };
 		A4107E642843296400A32716 /* libglfw3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A4107E632843296400A32716 /* libglfw3.a */; };
 		A437533B28459DAD00935CA0 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A401A5D928431B48008AE223 /* OpenGL.framework */; };
+		A43FD88A285015870065994B /* SpotLight.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A43FD888285015870065994B /* SpotLight.cpp */; };
 		A461B4F6284AD2E200A0482A /* Texture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A461B4F4284AD2E200A0482A /* Texture.cpp */; };
 		A461B4FB284BD69C00A0482A /* Light.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A461B4F9284BD69C00A0482A /* Light.cpp */; };
 		A46651292849320B00401FFB /* Camera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A46651272849320A00401FFB /* Camera.cpp */; };
@@ -71,6 +72,8 @@
 		A408933E2846E59300ADC0B8 /* GLWindow.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = GLWindow.hpp; sourceTree = "<group>"; };
 		A40893402846EE8B00ADC0B8 /* Shaders */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Shaders; sourceTree = "<group>"; };
 		A4107E632843296400A32716 /* libglfw3.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libglfw3.a; path = Libararies/Lib/libglfw3.a; sourceTree = "<group>"; };
+		A43FD888285015870065994B /* SpotLight.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = SpotLight.cpp; sourceTree = "<group>"; };
+		A43FD889285015870065994B /* SpotLight.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = SpotLight.hpp; sourceTree = "<group>"; };
 		A461B4F4284AD2E200A0482A /* Texture.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Texture.cpp; sourceTree = "<group>"; };
 		A461B4F5284AD2E200A0482A /* Texture.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Texture.hpp; sourceTree = "<group>"; };
 		A461B4F7284AD31800A0482A /* stb_image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stb_image.h; sourceTree = "<group>"; };
@@ -154,6 +157,8 @@
 				A4990508284E665E00CB10D7 /* PointLight.cpp */,
 				A4990509284E665E00CB10D7 /* PointLight.hpp */,
 				A499050B284E6F8400CB10D7 /* CommonValues.h */,
+				A43FD888285015870065994B /* SpotLight.cpp */,
+				A43FD889285015870065994B /* SpotLight.hpp */,
 			);
 			path = OpenGLProject;
 			sourceTree = "<group>";
@@ -235,6 +240,7 @@
 			files = (
 				A461B4FB284BD69C00A0482A /* Light.cpp in Sources */,
 				A499050A284E665E00CB10D7 /* PointLight.cpp in Sources */,
+				A43FD88A285015870065994B /* SpotLight.cpp in Sources */,
 				A408933F2846E59300ADC0B8 /* GLWindow.cpp in Sources */,
 				A4990507284E62F200CB10D7 /* DirectionalLight.cpp in Sources */,
 				A40893302846CDED00ADC0B8 /* Mesh.cpp in Sources */,

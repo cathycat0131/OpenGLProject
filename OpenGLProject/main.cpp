@@ -21,6 +21,7 @@
 #include "Material.hpp"
 #include "DirectionalLight.hpp"
 #include "CommonValues.h"
+#include "SpotLight.hpp"
 
 const float toRadians = 3.14159265f / 180.0f;
 
@@ -32,6 +33,7 @@ Camera camera;
 
 DirectionalLight mainLight;
 PointLight pointLights[MAX_POINT_LIGHTS];
+SpotLight spotLights[MAX_SPOT_LIGHTS];
 
 Material shinyMaterial;
 Material dullMaterial;
@@ -46,6 +48,7 @@ GLfloat lastTime = 0.0f;
 
 //Animation variables
 int pointLightCount = 0;
+unsigned int spotLightCount = 0;
 bool direction = true;
 bool sizeDirection = true;
 float triOffset = 0.0f;
@@ -127,10 +130,10 @@ void CreateObject() {
     };
     
     GLfloat floorVertices[] = {
-        -10.0f, 0.0f, -10.0f,   0.0f, 0.0f,     0.0f, -1.0f, 0.0f,
-        10.0f, 0.0f, -10.0f,    10.0f, 0.0f,    0.0f, -1.0f, 0.0f,
-        -10.0f, 0.0f, 10.0f,    0.0f, 10.0f,    0.0f, -1.0f, 0.0f,
-        10.0f, 0.0f, 10.0f,     10.0f, 10.0f,   0.0f, -1.0f, 0.0f
+        -50.0f, 0.0f, -50.0f,   0.0f, 0.0f,     0.0f, -1.0f, 0.0f,
+        50.0f, 0.0f, -50.0f,    50.0f, 0.0f,    0.0f, -1.0f, 0.0f,
+        -50.0f, 0.0f, 50.0f,    0.0f, 50.0f,    0.0f, -1.0f, 0.0f,
+        50.0f, 0.0f, 50.0f,     50.0f, 50.0f,   0.0f, -1.0f, 0.0f
     };
     
     //Calculate normal vector
@@ -172,26 +175,43 @@ int main( void )
     buildingTexture.LoadTexture();
     groundTexture = Texture("Textures/ground.jpeg");
     groundTexture.LoadTexture();
-    
+     
     //Create material
     shinyMaterial = Material(4.0f, 256);
     dullMaterial = Material(0.3f, 4);
     
     //Create light instance
     mainLight = DirectionalLight(1.0f, 1.0f, 1.0f,
-                                 0.1f,0.3f,
-                                 0.0f, 0.0f, -1.0f);
+                                 0.1f,0.1f,
+                                 0.0f, -1.0f, 0.0f);
+     
     pointLights[0] = PointLight(0.0f, 0.0f, 1.0f,
-                                0.0f, 1.0f,
+                                0.0f, 0.1f,
                                 0.0f, 0.0f, 0.0f,
                                 0.3f, 0.2f, 0.1f);
-    pointLightCount ++;
+    //pointLightCount ++;
     
     pointLights[1] = PointLight(0.0f, 1.0f, 0.0f,
-                                0.0f, 1.0f,
+                                0.0f, 0.1f,
                                 -4.0f, 2.0f, 0.0f,
                                 0.3f, 0.2f, 0.1f);
-    pointLightCount ++;
+    //pointLightCount ++;
+    
+    spotLights[0] = SpotLight(1.0f, 1.0f, 1.0f,
+                                0.0f, 0.5f,
+                                0.0f, 0.0f,0.0f,
+                                0.0f, -1.0f, 0.0f,
+                                1.0f, 0.0f, 0.0f,
+                                10.0f);
+    spotLightCount ++;
+     
+    spotLights[1] = SpotLight(1.0f, 1.0f, 1.0f,
+                                0.0f, 1.0f,
+                                0.0f, -1.5f,0.0f,
+                                -100.0f, -1.0f, 0.0f,
+                                1.0f, 0.0f, 0.0f,
+                                20.0f);
+    spotLightCount ++;
     
     GLuint uniformProjection = 0, uniformModel = 0, uniformView = 0,
     uniformEyePosition = 0, uniformSpecularIntensity = 0, uniformShininess = 0;
@@ -249,8 +269,13 @@ int main( void )
         uniformSpecularIntensity = shaderList[0].GetSpecularIntensityLocation();
         uniformShininess = shaderList[0].GetShininessLocation();
         
+        glm::vec3 lowerLight = camera.getCameraPosition();
+        lowerLight.y -= 0.3f;
+        spotLights[0].SetFlash(lowerLight, camera.getCameraDirection());
+        
         shaderList[0].SetDirectionalLight(&mainLight);
         shaderList[0].SetPointLights(pointLights, pointLightCount);
+        shaderList[0].SetSpotLights(spotLights, spotLightCount);
         //Put light into action
         //mainLight.UseLight(uniformAmbientIntensity, uniformAmbientColour, uniformDiffuseIntensity, uniformDirection);
         
