@@ -17,6 +17,9 @@
 		A40893372846DA0A00ADC0B8 /* Shader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A40893352846DA0A00ADC0B8 /* Shader.cpp */; };
 		A408933F2846E59300ADC0B8 /* GLWindow.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A408933D2846E59300ADC0B8 /* GLWindow.cpp */; };
 		A4107E642843296400A32716 /* libglfw3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A4107E632843296400A32716 /* libglfw3.a */; };
+		A41666AA285172E00048F200 /* libassimp.3.3.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A41666A9285172DF0048F200 /* libassimp.3.3.1.dylib */; };
+		A41666AB2851734B0048F200 /* libassimp.3.3.1.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = A41666A9285172DF0048F200 /* libassimp.3.3.1.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		A41666AE285174C30048F200 /* Model.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A41666AC285174C20048F200 /* Model.cpp */; };
 		A437533B28459DAD00935CA0 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A401A5D928431B48008AE223 /* OpenGL.framework */; };
 		A43FD88A285015870065994B /* SpotLight.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A43FD888285015870065994B /* SpotLight.cpp */; };
 		A461B4F6284AD2E200A0482A /* Texture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A461B4F4284AD2E200A0482A /* Texture.cpp */; };
@@ -45,6 +48,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				A41666AB2851734B0048F200 /* libassimp.3.3.1.dylib in Embed Libraries */,
 				A4C25E84284415F700F7B8F3 /* libGLEW.2.1.0.dylib in Embed Libraries */,
 			);
 			name = "Embed Libraries";
@@ -72,6 +76,9 @@
 		A408933E2846E59300ADC0B8 /* GLWindow.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = GLWindow.hpp; sourceTree = "<group>"; };
 		A40893402846EE8B00ADC0B8 /* Shaders */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Shaders; sourceTree = "<group>"; };
 		A4107E632843296400A32716 /* libglfw3.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libglfw3.a; path = Libararies/Lib/libglfw3.a; sourceTree = "<group>"; };
+		A41666A9285172DF0048F200 /* libassimp.3.3.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libassimp.3.3.1.dylib; path = Libararies/Lib/libassimp.3.3.1.dylib; sourceTree = "<group>"; };
+		A41666AC285174C20048F200 /* Model.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Model.cpp; sourceTree = "<group>"; };
+		A41666AD285174C20048F200 /* Model.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Model.hpp; sourceTree = "<group>"; };
 		A43FD888285015870065994B /* SpotLight.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = SpotLight.cpp; sourceTree = "<group>"; };
 		A43FD889285015870065994B /* SpotLight.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = SpotLight.hpp; sourceTree = "<group>"; };
 		A461B4F4284AD2E200A0482A /* Texture.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Texture.cpp; sourceTree = "<group>"; };
@@ -89,6 +96,7 @@
 		A4990508284E665E00CB10D7 /* PointLight.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = PointLight.cpp; sourceTree = "<group>"; };
 		A4990509284E665E00CB10D7 /* PointLight.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = PointLight.hpp; sourceTree = "<group>"; };
 		A499050B284E6F8400CB10D7 /* CommonValues.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonValues.h; sourceTree = "<group>"; };
+		A4A3BA4A2852C2CD00A7DFF2 /* Models */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Models; sourceTree = "<group>"; };
 		A4C25E7D28440C3800F7B8F3 /* libGLEW.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGLEW.a; path = Libararies/Lib/libGLEW.a; sourceTree = "<group>"; };
 		A4C25E82284415B700F7B8F3 /* libGLEW.2.1.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libGLEW.2.1.0.dylib; path = Libararies/Lib/libGLEW.2.1.0.dylib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -98,6 +106,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A41666AA285172E00048F200 /* libassimp.3.3.1.dylib in Frameworks */,
 				A4C25E83284415B700F7B8F3 /* libGLEW.2.1.0.dylib in Frameworks */,
 				A437533B28459DAD00935CA0 /* OpenGL.framework in Frameworks */,
 				A4107E642843296400A32716 /* libglfw3.a in Frameworks */,
@@ -132,6 +141,7 @@
 		A401A5D028431AF0008AE223 /* OpenGLProject */ = {
 			isa = PBXGroup;
 			children = (
+				A4A3BA4A2852C2CD00A7DFF2 /* Models */,
 				A461B4F8284AE28100A0482A /* Textures */,
 				A461B4F7284AD31800A0482A /* stb_image.h */,
 				A40893402846EE8B00ADC0B8 /* Shaders */,
@@ -159,6 +169,8 @@
 				A499050B284E6F8400CB10D7 /* CommonValues.h */,
 				A43FD888285015870065994B /* SpotLight.cpp */,
 				A43FD889285015870065994B /* SpotLight.hpp */,
+				A41666AC285174C20048F200 /* Model.cpp */,
+				A41666AD285174C20048F200 /* Model.hpp */,
 			);
 			path = OpenGLProject;
 			sourceTree = "<group>";
@@ -166,6 +178,7 @@
 		A401A5D828431B48008AE223 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A41666A9285172DF0048F200 /* libassimp.3.3.1.dylib */,
 				A4C25E82284415B700F7B8F3 /* libGLEW.2.1.0.dylib */,
 				A4C25E7D28440C3800F7B8F3 /* libGLEW.a */,
 				A4107E632843296400A32716 /* libglfw3.a */,
@@ -241,6 +254,7 @@
 				A461B4FB284BD69C00A0482A /* Light.cpp in Sources */,
 				A499050A284E665E00CB10D7 /* PointLight.cpp in Sources */,
 				A43FD88A285015870065994B /* SpotLight.cpp in Sources */,
+				A41666AE285174C30048F200 /* Model.cpp in Sources */,
 				A408933F2846E59300ADC0B8 /* GLWindow.cpp in Sources */,
 				A4990507284E62F200CB10D7 /* DirectionalLight.cpp in Sources */,
 				A40893302846CDED00ADC0B8 /* Mesh.cpp in Sources */,

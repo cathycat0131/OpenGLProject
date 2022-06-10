@@ -22,6 +22,7 @@
 #include "DirectionalLight.hpp"
 #include "CommonValues.h"
 #include "SpotLight.hpp"
+#include "Model.hpp"
 
 const float toRadians = 3.14159265f / 180.0f;
 
@@ -41,6 +42,8 @@ Material dullMaterial;
 Texture brickTexture;
 Texture buildingTexture;
 Texture groundTexture;
+
+Model carModel;
 
 //Calculate time
 GLfloat deltaTime = 0.0f;
@@ -163,11 +166,11 @@ int main( void )
 {
     mainWindow = GLWindow(1280,1024); //1280, 1024
     mainWindow.Initialize();
-    
+     
     CreateObject();
     CreateShaders();
-     
-    camera = Camera(glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(0.0f, 1.0f, 0.0f), -60.0f, 0.0f, 2.5f, 0.1f);
+      
+    camera = Camera(glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(0.0f, 1.0f, 0.0f), -60.0f, 0.0f, 5.0f, 0.1f);
     
     brickTexture = Texture("Textures/brick.jpg");
     brickTexture.LoadTexture();
@@ -180,6 +183,10 @@ int main( void )
     shinyMaterial = Material(4.0f, 256);
     dullMaterial = Material(0.3f, 4);
     
+    //Load model
+    carModel = Model();
+    carModel.LoadModel("Models/cottage.obj");
+     
     //Create light instance
     mainLight = DirectionalLight(1.0f, 1.0f, 1.0f,
                                  0.1f,0.1f,
@@ -217,7 +224,7 @@ int main( void )
     uniformEyePosition = 0, uniformSpecularIntensity = 0, uniformShininess = 0;
     
     glm::mat4 projection = glm::perspective(glm::radians(45.0f), (GLfloat)(mainWindow.getBufferWidth() / mainWindow.getBufferHeight()), 0.1f, 100.0f);
-     
+    
     /* Loop until the user closes the window */
     while (!mainWindow.getShouldClose()){
         
@@ -228,6 +235,7 @@ int main( void )
         
         // Get + Handle User Input
         glfwPollEvents();
+        
         camera.keyControl(mainWindow.getKeys(),deltaTime);
         camera.mouseControl(mainWindow.getXChange(), mainWindow.getYChange());
          
@@ -315,6 +323,15 @@ int main( void )
         groundTexture.UseTexture();
         shinyMaterial.UseMaterial(uniformSpecularIntensity, uniformShininess);
         meshList[2]->RenderMesh();
+        
+        //Object 4
+        model = glm::mat4(1.0f);
+        model = glm::translate(model, glm::vec3(0.0f, -2.0f, 0.0f));
+        //model = glm::rotate(model, 0 * toRadians, glm::vec3(0.0f, 1.0f, 0.0f));
+        model = glm::scale(model, glm::vec3(0.3f,0.3f, 0.3f));
+        glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+        shinyMaterial.UseMaterial(uniformSpecularIntensity, uniformShininess);
+        carModel.RenderModel();
     
         glUseProgram(0);
         
